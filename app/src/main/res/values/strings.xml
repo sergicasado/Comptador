@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">comptador</string>
+    <string name="touchme">Tocam</string>
 </resources>
