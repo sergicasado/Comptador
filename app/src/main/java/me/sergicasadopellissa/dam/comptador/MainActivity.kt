@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
     internal val internalCountDownTimer: Long = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d(TAG, "Hola mon! onCreate")
+        Log.d(TAG, "Hola mon! onCreate") 
+        Log.d(TAG,counter.toString())
+        Log.d(TAG,time.toString())
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
