@@ -7,15 +7,17 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toast.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val INITIAL_TIME = 20
 
     internal lateinit var tapMeButton: Button
     internal lateinit var timeTextView: TextView
     internal lateinit var counterTextView: TextView
     internal var counter = 0
-    internal var time = 10
+    internal var time = INITIAL_TIME
 
     internal var appStarted = false;
     internal lateinit var countdownTimer : CountDownTimer
@@ -75,7 +77,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun endGame (){
-        Toast.makeText(this,getString(R.string.endGame), Toast.LENGTH_LONG).show()
+        makeText(this,getString(R.string.endGame, counter), LENGTH_LONG).show()
         resetGame()
     }
 
@@ -83,8 +85,11 @@ class MainActivity : AppCompatActivity() {
 
         // RESET PUNTUACIÓ A ZERO
         counter = 0
+        counterTextView.text = counter.toString()
 
         // REINICIALITZAR EL COMPTADOR
+        time = INITIAL_TIME
+        timeTextView.text = time.toString()
         initCountdown()
 
         // GAME STARTED A FALSE
